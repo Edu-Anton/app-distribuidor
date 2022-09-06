@@ -11,11 +11,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1 class="title">Write the best title for your page.</h1>
-                <h4>Every landing page needs a small description after the big bold title, that's why we added this text here. Add here all the information that can make you or your product create the first impression.</h4>
+                <h1 class="title">Bienvenido a Distribuidor.com</h1>
+                <h4>Realiza pedidos en línea y te contactaremos para coordinar la entrega en menos de una hora.</h4>
                 <br />
                 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-danger btn-raised btn-lg">
-                    <i class="fa fa-play"></i> Watch video
+                    <i class="fa fa-play"></i> ¿Cómo funciona?
                 </a>
             </div>
         </div>
@@ -66,45 +66,24 @@
         </div>
 
         <div class="section text-center">
-            <h2 class="title">Here is our team</h2>
+            <h2 class="title">Productos disponibles</h2>
 
             <div class="team">
                 <div class="row">
+                    @foreach ($products as $product)
                     <div class="col-md-4">
                         <div class="team-player">
                             <img src="{{ asset('img/avatar.jpg') }}" alt="Thumbnail Image" class="img-raised img-circle">
-                            <h4 class="title">Gigi Hadid <br />
+                            <h4 class="title">{{ $product->name }} <br />
                                 <small class="text-muted">Model</small>
                             </h4>
-                            <p class="description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
+                            <p class="description">{{ $product->description }}</p>
                             <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
                             <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
                             <a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="team-player">
-                            <img src="{{ asset('img/christian.jpg') }}" alt="Thumbnail Image" class="img-raised img-circle">
-                            <h4 class="title">Christian Louboutin<br />
-                                <small class="text-muted">Designer</small>
-                            </h4>
-                            <p class="description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                            <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
-                            <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="team-player">
-                            <img src="{{ asset('img/kendall.jpg') }}" alt="Thumbnail Image" class="img-raised img-circle">
-                            <h4 class="title">Kendall Jenner<br />
-                                <small class="text-muted">Model</small>
-                            </h4>
-                            <p>You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                            <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-google-plus"></i></a>
-                            <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-youtube-play"></i></a>
-                            <a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-twitter"></i></a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
 
