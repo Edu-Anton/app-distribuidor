@@ -25,18 +25,18 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">#</th>
-                                    <th>Nombre</th>
-                                    <th>Descripción</th>
-                                    <th>Categoría</th>
-                                    <th class="text-right">Precio</th>
-                                    <th class="text-right col-md-2">Opciones</th>
+                                    <th class="col-md-2">Nombre</th>
+                                    <th class="col-md-5">Descripción</th>
+                                    <th class="text-center">Categoría</th>
+                                    <th class="text-right col-md-1">Precio</th>
+                                    <th class="text-right col-md-3">Opciones</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($products as $product)
                                 <tr>
                                     <td class="text-center">{{ $product->id }}</td>
-                                    <td>{{ $product->name }}</td>
+                                    <td class="text-left">{{ $product->name }}</td>
                                     <td>{{ $product->description }}</td>
                                     <td>{{ $product->category ? $product->category->name : 'General' }}</td>
                                     <td class="text-right">$ {{ $product->price }}</td>
@@ -47,7 +47,10 @@
                                         <a href="{{ url('/admin/products/'.$product->id.'/edit') }}" rel="tooltip" title="Editar" class="btn btn-success btn-simple btn-xs">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <form action="{{ url('/admin/products/'.$product->id) }}" method="POST" class="inline-block">
+                                        <a href="{{ url('/admin/products/'.$product->id.'/images') }}" rel="tooltip" title="Imágenes del productos" class="btn btn-warning btn-simple btn-xs">
+                                            <i class="fa fa-image"></i>
+                                        </a>
+                                        <form action="{{ url('/admin/products/'.$product->id) }}" method="POST" style="display:inline">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" rel="tooltip" title="Eliminar" class="btn btn-danger btn-simple btn-xs">
@@ -70,35 +73,5 @@
 
 </div>
 
-<footer class="footer">
-    <div class="container">
-        <nav class="pull-left">
-            <ul>
-                <li>
-                    <a href="http://www.creative-tim.com">
-                        Creative Tim
-                    </a>
-                </li>
-                <li>
-                    <a href="http://presentation.creative-tim.com">
-                        About Us
-                    </a>
-                </li>
-                <li>
-                    <a href="http://blog.creative-tim.com">
-                        Blog
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.creative-tim.com/license">
-                        Licenses
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="copyright pull-right">
-            &copy; 2016, made with <i class="fa fa-heart heart"></i> by Creative Tim
-        </div>
-    </div>
-</footer>
+@include('includes.footer')
 @endsection

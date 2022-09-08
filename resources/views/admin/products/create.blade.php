@@ -84,81 +84,9 @@
     
             </div>
         </div>
-        
-
-
-
-        <div class="section landing-section">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h2 class="text-center title">¿Aún no te has registrado?</h2>
-                    <h4 class="text-center description">Registrate ingresando tus datos básicos y podrás realizar tus pedidos a través de nuestro carrito de compras. Si aún no te decides, de todas formas, con tu cuenta de usuario podrás hacer todas tus consultas sin compromiso.</h4>
-                    <form class="contact-form">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group label-floating">
-                                    <label class="control-label">Nombre</label>
-                                    <input type="email" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group label-floating">
-                                    <label class="control-label">Correo Electrónico</label>
-                                    <input type="email" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group label-floating">
-                            <label class="control-label">Tu mensaje</label>
-                            <textarea class="form-control" rows="4"></textarea>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-4 col-md-offset-4 text-center">
-                                <button class="btn btn-primary btn-raised">
-                                    Send Message
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-        </div>
     </div>
 
 </div>
 
-<footer class="footer">
-    <div class="container">
-        <nav class="pull-left">
-            <ul>
-                <li>
-                    <a href="http://www.creative-tim.com">
-                        Creative Tim
-                    </a>
-                </li>
-                <li>
-                    <a href="http://presentation.creative-tim.com">
-                        About Us
-                    </a>
-                </li>
-                <li>
-                    <a href="http://blog.creative-tim.com">
-                        Blog
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.creative-tim.com/license">
-                        Licenses
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="copyright pull-right">
-            &copy; 2016, made with <i class="fa fa-heart heart"></i> by Creative Tim
-        </div>
-    </div>
-</footer>
+@include('includes.footer')
 @endsection
