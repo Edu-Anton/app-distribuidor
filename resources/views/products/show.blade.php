@@ -30,6 +30,19 @@
                 <p>{{ $product->long_description }}</p>
             </div>
 
+            <div class="text-center">
+                <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalAddToCart">
+                    <i class="material-icons">add</i> Añadir al carrito de compras
+                </button>
+            </div>
+
+            {{-- <!-- Button trigger modal -->
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modalAddToCart">
+                Launch demo modal
+            </button> --}}
+            
+            
+
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="profile-tabs">
@@ -57,6 +70,29 @@
             </div>
 
         </div>
+    </div>
+</div>
+
+<!-- Modal Core -->
+<div class="modal fade" id="modalAddToCart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Seleccione la cantidad que desea agregar</h4>
+        </div>
+        <form action="{{ url('/cart') }}" method="POST">
+            {{ csrf_field() }}
+            <input type="hidden" name="product_id" value="{{ $product->id }}">
+            <div class="modal-body">
+                <input type="number" name="quantity" value="1" class="form-control">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-info btn-simple">Añadir al carrito</button>
+            </div>
+        </form>
+    </div>
     </div>
 </div>
 

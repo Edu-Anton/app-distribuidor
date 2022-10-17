@@ -17,7 +17,8 @@ class CreateCartDetailsTable extends Migration
             $table->bigIncrements('id');
 
             $table->integer('quantity');
-            $table->integer('discount');
+            $table->integer('discount')->default(0);
+            // $table->softDeletes();
 
             $table->unsignedBigInteger('cart_id');
             $table->foreign('cart_id')->references('id')->on('carts');

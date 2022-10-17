@@ -53,6 +53,9 @@
 								{{ Auth::user()->name }} <span class="caret"></span>
 							</a>
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+								<li>
+									<a href="{{ url('/home') }}">Dashboard</a>
+								</li>
 								@if (auth()->user()->admin)
 								<a class="dropdown-item inline-block" href="{{ url('/admin/products') }}">
 									Gestionar
